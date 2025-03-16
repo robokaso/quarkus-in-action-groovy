@@ -12,6 +12,7 @@ class GreetingResourceTest {
 
     @ConfigProperty(name = "greeting")
     String greeting
+
     @Test
     void testHelloEndpoint() {
         given()
