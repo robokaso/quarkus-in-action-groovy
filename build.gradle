@@ -38,3 +38,17 @@ compileJava {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
+// GFIX: place compiled test classes under 'java' dir (default 'groovy' dir is ignored by devmode)
+sourceSets {
+	test {
+		groovy {
+			groovy.destinationDirectory = file('build/classes/java/test')
+		}
+	}
+	'native-test' {
+		groovy {
+			groovy.destinationDirectory = file('build/classes/java/native-test')
+		}
+	}
+}
